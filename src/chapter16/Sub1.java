@@ -22,7 +22,7 @@ public class Sub1 {
 	 * type Collection. So it means that under this parameter we can put any object
 	 * that implements Collection interface. We could put an ArrayList, LinkedList,
 	 * HashSet etc. Easy to remember, collection is a group of elements, ArrayList
-	 * is a group of elements. Also this collection is generic and has parameter
+	 * is a group of elements. Also, this collection is generic and has parameter
 	 * type. Next parameter is also another collection with T parameter type and a T
 	 * target. Note that target has the same type as a collections parameter type.
 	 * That's because this method checks if the target is in at least one of those
@@ -39,7 +39,7 @@ public class Sub1 {
 	 * This is a method using List <T> interface as a data type. As in previous
 	 * example, under an interface we could put any object that implements that
 	 * interface. Search for "Java collection" and get images to see that all of
-	 * those lists, sets, etc are all collections. This method is actually nothing
+	 * those lists, sets, etc. are all collections. This method is actually nothing
 	 * new, just a practise on how to use generics combined with Collection
 	 * interfaces.
 	 */

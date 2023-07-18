@@ -25,7 +25,7 @@ public class Sub1f {
 		System.out.println(Thread.currentThread().getPriority()); // 5
 		Thread.currentThread().setPriority(10);
 		/*
-		 * By default a created thread has priority level of 5. The scale is from 1 to
+		 * By default, a created thread has priority level of 5. The scale is from 1 to
 		 * 10. The threads with higher priority will be executed before those of lower
 		 * priority.
 		 */

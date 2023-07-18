@@ -31,7 +31,7 @@ public class Sub1a {
 	 * arguments are passed to Sub1 (node class) constructor as well as head
 	 * variable.
 	 * 
-	 * This part may seem tricky, let's analize it: head = new Sub1(newName, newQua,
+	 * This part may seem tricky, let's analyze it: head = new Sub1(newName, newQua,
 	 * head); First, we pass the value of newName and newQua to the Sub1
 	 * constructor, this part seems easy. And then we pass value of head. head
 	 * variable here is a first node. But, what happens in the constructor in Sub1?
@@ -65,8 +65,8 @@ public class Sub1a {
 	 * 
 	 * -this all may seem complex and difficult to make everytime. All of this is a
 	 * part of standard java library and all of this is already implemented. Here we
-	 * are building eveything from square one because it is good to understand how
-	 * it works. In reality you never write this code, you only use methods
+	 * are building everything from square one because it is good to understand how
+	 * it works. In reality, you never write this code, you only use methods
 	 * provided.
 	 * 
 	 * One more thing. Remember what is reference? It is a shallow copy. When we

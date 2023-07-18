@@ -36,7 +36,7 @@ public class Sub1 {
 		 * size is defined and cannot be changed. If you have array of size 10 and want
 		 * to store 11 elements, you cannot do that. You need to create another array
 		 * and copy all the data. ArrayList in flexible. Their size can change. You can
-		 * add as much objects to the array list and it will automatically expand
+		 * add as many objects to the array list, and it will automatically expand
 		 * without your interference. When you create an array list you can specify
 		 * initial size. If initial size is small and you want to add many objects into
 		 * your array list. It will automatically expand many times taking time and

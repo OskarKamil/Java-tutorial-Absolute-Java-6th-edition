@@ -9,7 +9,7 @@ public class Sub2b extends JFrame {
 	 * This is a proper way to define a JFrame class, what we mean by that is that
 	 * the class is descendant of JFrame class. Previous example was only to show
 	 * methods and simple idea how the code works and the explanation. An actual way
-	 * that you have to using JFrame is to extend it.
+	 * that you have to use JFrame is to extend it.
 	 */
 
 	public static final int WIDTH = 600;

@@ -120,10 +120,10 @@ public class Sub1 extends JFrame {
             setLocationRelativeTo(null);
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             /*
-             * Here we set default operation to be dispose on close. Why? This is just a
+             * Here we set default operation to be disposed on close. Why? This is just a
              * windows asking if we are sure to close the program. We have 2 buttons, yes to
              * close the program and no to close the window. Pressing no and X button here
-             * does the same thing. Of course you could have set Do nothing on close, but
+             * does the same thing. Of course, you could have set Do nothing on close, but
              * then X would be useless.
              */
 

@@ -47,8 +47,8 @@ public class Sub1a extends JFrame {
 	 * an abstract class, but the previous example implements an interface.
 	 * Extending this class here we need to override only one method, namely
 	 * windowClosing(). When implementing an interface we had to define 7 methods.
-	 * Up to you which way you want to do. Note that this is extending and you can
-	 * extends only one class at a time.
+	 * Up to you which way you want to do. Note that this is extending, and you can
+	 * extend only one class at a time.
 	 */
 
 	private class ConfirmWindow extends JFrame implements ActionListener {

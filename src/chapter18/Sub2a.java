@@ -30,9 +30,9 @@ public class Sub2a extends JFrame {
 		panel2.setLayout(new FlowLayout());
 		JButton yes = new JButton("Yes");
 
-		ImageIcon yesIcon = new ImageIcon("yes1.png");
+		ImageIcon yesIcon = new ImageIcon("src/resources/yes1.png");
 		yes.setIcon(yesIcon);
-		JButton no = new JButton("No", new ImageIcon("no1.png"));
+		JButton no = new JButton("No", new ImageIcon("src/resources/no1.png"));
 		yes.setMargin(new Insets(25, 25, 25, 25));
 		// yes.setMargin(new Insets(2, 11, 2, 11));
 		no.setMargin(new Insets(0, 0, 0, 0));
@@ -52,8 +52,8 @@ public class Sub2a extends JFrame {
 		panel1Grid.add(panel2, BorderLayout.CENTER);
 		add(panel1Grid);
 
-		JLabel label1 = new JLabel("First JLabel", new ImageIcon("wolf.png"), SwingConstants.RIGHT);
-		JLabel label2 = new JLabel("Second JLabel", new ImageIcon("../wolf2.png"), SwingConstants.LEFT);
+		JLabel label1 = new JLabel("First JLabel", new ImageIcon("src/resources/wolf.png"), SwingConstants.RIGHT);
+		JLabel label2 = new JLabel("Second JLabel", new ImageIcon("src/resources/wolf2.png"), SwingConstants.LEFT);
 		// label1.setHorizontalAlignment(SwingConstants.CENTER);
 		/*
 		 * JButton and JMenuItem has constructor of String only, ImageIcon only, or

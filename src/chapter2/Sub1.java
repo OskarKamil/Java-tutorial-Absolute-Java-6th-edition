@@ -18,7 +18,7 @@ public class Sub1 {
 		 * moneyFormatter. Then we assign a value that is on the right side. The right
 		 * side determines what is our default currency format depending on our
 		 * location. (if you're in the UK, it will be pounds, if USA, it will be
-		 * dollars, etc). Then we use println to output a text.
+		 * dollars, etc.). Then we use println to output a text.
 		 * moneyFormatter.format(number) is a method. It takes a value number as an
 		 * attribute, formats it in currency format, rounds up if necessary, then casts
 		 * as string. Note that inside of println, you can use String price = method of

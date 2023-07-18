@@ -15,22 +15,22 @@ public class Sub3 {
         String solution = "The answer is " + 42; // The answer is 42
         System.out.println("100" + 42); // 10042
         /*
-         * Other variable types can be cast into string type. Most of types can be
-         * easily casted into string type,
+         * Other variable types can be cast into string type. Most of the types can be
+         * easily cast into string type,
          */
 
         System.out.println("2 + 2 = " + (2 + 2));
         System.out.println("2 + 2 = " + 2 + 2);
         /*
-         * When operation takes String and other types, all other types are casted into
+         * When operation takes String and other types, all other types are cast into
          * String. In the first example, the calculation is done first, so 2+2=4, and
-         * then the 4 value is casted as "4" String type. Second example prints 2 + 2,
+         * then the 4 value is cast as "4" String type. Second example prints 2 + 2,
          * and then next operation is plus, which is done from left to right, on left is
-         * String, on right is 2, 2 is casted into "2" and added into String, then there
-         * is another 2 casted into "2". This result is "2 + 2 = 22"
+         * String, on right is 2, 2 is cast into "2" and added into String, then there
+         * is another 2 cast into "2". This result is "2 + 2 = 22"
          */
 
-        String word1 = "pronouncation";
+        String word1 = "pronunciation";
         int letterCount;
         letterCount = word1.length();
         System.out.println("The length of the word: " + word1 + ", is " + letterCount + " characters.");

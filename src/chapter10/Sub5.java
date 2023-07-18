@@ -8,7 +8,7 @@ public class Sub5 {
 	public static void main(String[] args) {
 
 		try {
-			RandomAccessFile ioStream = new RandomAccessFile("chapter10Sub5.java", "rw");
+			RandomAccessFile ioStream = new RandomAccessFile("chapter10Sub5.txt", "rw");
 			/*
 			 * This is a Random access file stream. It works as both input and output
 			 * stream. In the constructor we give name of the file. If the file doesn't

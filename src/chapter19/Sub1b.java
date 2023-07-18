@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class Sub1b extends JFrame implements ActionListener, Runnable {
 	/*
 	 * Instead of creating an inside private class that extends Thread, you can
-	 * implement an interface Runnable which works in the the same way as Threat.
+	 * implement an interface Runnable which works in the same way as Threat.
 	 * This interface has only one method heading - run(). Inside run() method you
 	 * specify what happens when the Thread starts.
 	 */

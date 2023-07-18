@@ -4,7 +4,7 @@ public class Sub1 {
 	/*
 	 * * Programs with GUI are type of Event-Driven programming. It means that what
 	 * program executes depends on what user chooses. In future our programs will
-	 * have couple of buttons and features and what will happen will depend on the
+	 * have a couple of buttons and features and what will happen will depend on the
 	 * user. Event is called an action that will happen after pressing a button, and
 	 * pressing a button is called firing an event. When a button is pressed and an
 	 * action happens -> a button fires an event. For an event to happen we need to

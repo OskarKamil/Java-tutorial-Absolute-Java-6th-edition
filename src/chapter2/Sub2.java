@@ -31,7 +31,7 @@ public class Sub2 {
         String junk = keyboard.nextLine();
         /* To send input to the program, we need to press enter [Return] key. Then all methods but nextLine() don't read
         white spaces. They read all characters but leave \n in the buffer. nextLine() reads input until it finds the
-        next line symbol. Thus other methods leave \n in the buffer, nextLine() finds the first character as \n new line
+        next line symbol. Thus, other methods leave \n in the buffer, nextLine() finds the first character as \n new line
         and that's how empty string appears. In short, either you empty the buffer before (explained later) you used any
         keyboard input that resulted in pressing Enter key. */
 
