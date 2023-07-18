@@ -1,0 +1,23 @@
+When Eclipse Java IDE is installed.
+
+Open Eclipse.
+Set up workspace folder. In this folder all your projects will be stored. Usually your personal folder.
+
+How to create new project.
+File > New > Java Project
+Java Project > Next
+Project name: name of a program that you want to create. Calculator etc.
+Finish
+Don't create module
+
+How to set proper perspective
+Window > Show view > Debug
+If not available
+Window > Perspective > Open perspective > Debug
+
+On your left: debug, project explorer
+Project Explorer shows your projects inside the worksplace folder
+src is the main folder that you are interested in. Inside are source codes
+
+Each class needs a separate file. To create a new class/src.
+Click src inside your project and create new class.

@@ -1,0 +1,65 @@
+										CHAPTER11
+
+Recursive method is a method that has it's own invocation in the definition.
+
+Each recursive method needs a stopping case. This is usually an if statement which doesn't invoke recursive call.
+
+Recursive methods are not mandatory to use. Each problem solved by recursions can be also solved in iteration type with use of loop or loops. You should use iterative option over recursive option if it's useful. You can design algorithm in recursive style and then make it into iterative style. Some algorithms and codes are simpler to code with recursive that iterations. You need to choose if you go for performance or readibility since recursive methods are slower than iterative options.
+
+A method that is recursive and does nothing after the recursive call but returns a value is called a tail recursion. Since recursions are slower than loops, compiler can optimize then code it runs by automatically transforming a recrusion into a loop if it is a tail recursion.
+For example. return search(args) is tail, answer = search(args); return answer; is tail, but, return search(args)*2 is not, because this method call doesn't return the clean reutned value of a method call, it returns altered value, altered because doubled with *2.
+
+Example of recursive methods use: factorials, binary search, search through files, sum of powers.
+
+										CHAPTER12
+
+UML means Unified Modeling Language. UML is designed to represent classes,
+inheritance, methods and instance variables of a class in a graphical way.
+Example of a class diagram for class Square
+
+----------------------------------------
+				Square
+----------------------------------------
+- side: double
+- xCoordinate: double
+- yCoordinate: double
+----------------------------------------
++ resize(double newSide): void
++ move(double newX, double newY): void	
+# erase(): void
+. . .
+
+First Square means name of the class
+
+Access symbols:
+- means private
++ means public
+# means protected
+~ means package
+
+Learn more online as this graphical representation cannot be visualized here
+in a text editor. Search for "UML".
+
+										CHAPTER13
+
+Interfaces are a list of method headings. If a class implements an interface, it must define all methods in the interface following semantics. If the class is abstract, it means that the class doesn't define all the methods, and it's up to the children to define them.
+
+Interfaces are great for cloning and sorting.
+
+Interfaces have only method headings. But they can also have constants.
+
+Cloneable interface.
+
+										CHAPTER14
+
+import java.util.ArrayList;
+To use ArrayList class first it needs to be imported.
+
+ArrayList<String> list = new ArrayList<String>();
+ArrayList<String> list3 = new ArrayList<>(40);
+Definition of an ArrayList. They can have set type like String, Integer etc, it must be class type, not primitive type. Second <Type> can be ommited. (40) is the initial size of the ArrayList. Default is 10.
+
+System.out.println(list);
+You can print an ArrayList.
+
+Some methods on arraylists: add, set, get, clear, remove

@@ -1,0 +1,175 @@
+										CHAPTER1
+
+package chapter1;
+it's like a folder to group similar classes
+
+String word = "GoodMorning";
+word.length().
+.lenght() is a method of class String. It returns number of characters long of a string.
+Instead of variable name, literal can be used. "happy".lenght() if legal.
+
+THE LIST OF ESCAPE SEQUENCES:
+\" Double quote.
+\' Single quote.
+\\ Backslash.
+\n New line. Go to the beginning of the next line.
+\r Carriage return. Go to the beginning of the current line.
+\t Tab. White space up to the next tab stop.
+
+String sentence = "Today is a good day.";
+sentence.indexOf("good");
+.indexOf(string) is a method of class String. It returns position at which "good" string starts in sentence.
+
+sentence.substring(start, end);
+Returns a part of a string.
+
+Some helpful methods of String class:
+int length()
+boolean equals(Other_String)
+boolean equalsIgnoreCase(Other_String)
+String toLowerCase( )
+String toUpperCase( )
+String trim( )
+char charAt(Position)
+String substring(Start)
+String substring(Start, End)
+int indexOf(A_String)
+int indexOf(A_String, Start)
+int lastIndexOf(A_String)
+int compareTo(A_String)
+int compareToIgnoreCase(A_String)
+
+										CHAPTER2
+
+import java.text.NumberFormat;
+NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
+String price1 = moneyFormatter.format(0.99111);
+Checks our current locale and whether it's UK or USA or other country, it will output the number in money format with correct currency symbol.
+
+import java.util.Locale;
+moneyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
+If we want to use other locale than our current one.
+
+import java.text.DecimalFormat;
+DecimalFormat simplePrice = new DecimalFormat("0.00");
+DecimalFormat simplePrice2 = new DecimalFormat("#.00");
+We create a pattern how to display our format. 0 indicates a mandatory digit display. So even if price is 0.50. It will still display both first zero and last. # indicates display of digit only if it is non zero. So using seconds pattern price 0.50 would be displayed as .50
+EXAMPLE:
+System.out.println("price for coke: $" + simplePrice.format(0.99));
+System.out.println("price for chocolate bar: $" + simplePrice2.format(0.99));
+
+System.out.printf("$ %d", n1);
+Outputs string in " ". %d is replaced by value of n1 (which is int).
+
+System.out.printf("$ %.2f\n", price);
+Outputs string in " ". %.2f is formatted variable [price]
+Printf is an old method that outputs text and formats number output. printf consists of 2 or more arguments separated by comma. How printf works:
+("anything%6.2fanything", variable);
+this will output "anything" + variable + "anything";
+%6.2f - 6 means at least six characters will be output in place of variable (if the output is actually less than that, blank spaces will be put at the beginning. If it's more, then nothing will change. 2f means that exactly 2 digits after point will be output, even if they are zero. If you don't want to include a minimum number of characters, leave that space blank (%.2f). Zero causes error. If you don't want to include the number of digits after point, leave it empty (%6f). Java default settings will take over.
+f stands for floating numbers (double, float). d stands for integer. There can be more arguments. Strings are replaces by %s
+
+System.out.printf("%n$ %.2f for %s%n", price, word3);
+Output = "
+$ [price] for [word3]
+". While using printf() it's better to use %n instead of \n because it's more versatile accross systems.
+
+System.out.printf("- %30s -\n", word1);
+Previously %6.2f meant that number must be at least 6 digits long. If it wasn't, there would be empty spaces put in front of it to make up the space. Same works with strings. %30s means that if string word1 is less than 30 character, it will add extra missing spaces in front of it. %-30 will do opposite, will add extra spaces and the end of the word.
+
+import java.util.Scanner;
+Scanner keyboard = new Scanner(System.in);
+Using keyboard as an object of the class Scanner, we will be able to input data from the keyboard. (keyboard is not a key word)
+
+int n1;
+n1 = keyboard.nextInt();
+Let's us input integer and saved to n1.
+
+double d1;
+d1 = keyboard.nextDouble();
+Same with double.
+
+String word1;
+word1 = keyboard.next();
+The program will initialize word1 with our input limited by first accourance of white character. (space or new line)
+If we entered space in our input, only the part of the input will be saved into our word1. The rest is junk, and next time using nextInt or anything. The leftovers will be taken stopping us from inputting anything. After using next() it's good to use nextLine() to empty leftovers.
+
+String junk = keyboard.nextLine();
+Let's us input whole line with spaces, and is limited to new lines only.
+
+										CHAPTER3
+										
+String result = (points > 75) ? "passed" : "failed";\
+If the statement is true, then assign "passed" to result, otherwise assign "failed".
+
+loopInt:
+for(int i = 1; i<=10; i++) {;}
+break [labelname] - exits the loop with that label name. Basically goes to the closing parenthes } and continues from there. Break label doesn't need to be a label of a loop. You can label any statement. However some say it shouldn't be used. It's better to use good organised code than using labels.
+
+assert (a == 0) && (b == 0);
+Assert is a tool that will simply check whether a statement is true. If it's true it means that program is running correctly, hoewver if the statement is false, the program will end with error code.
+
+import java.util.Random;
+Random randomnumber = new Random();
+randomnumber.nextInt(lenght) + start. Where lenght is how many cases can be, and start is starting point, going up. Roll a dice would be: random.nextInt(6)+1, where 6 is possible cases, and 1 is starting point. In place of lenght can be put "n" which will output only non negative numbers. Leaving both spaces empty, it will output any random integer.
+
+There is also randomnumber.nextDouble() * lenght + start. It works same as nextInt. lenght is how many cases and start is starting point. Foe example nextDouble() * 36.6 + 0 will output any number between 0 and 36.6 exclusive. leaving all variables empty, this will output just random double between 0 and 1 exclusive. n>=0 and n<1
+
+										CHAPTER4
+										
+import java.util.StringTokenizer;
+StringTokenizer wordfactory = new StringTokenizer("Give me the word, my friend.", " \n.,");
+while(wordfactory.hasMoreTokens()) {
+System.out.println(wordfactory.nextToken()); }
+
+All classes should have toString() adnd equals() methods. Also if this class is mutable, it should have setters. Mutators that change values of private variables.
+
+										CHAPTER5
+										
+private static int idCount = 0;
+Static variable holds value for all objects of the class. It doesn't need to call an object, it is called by their class name. For example, class Date. Would be Date.idCount += 1;
+
+public static final double RATE = 0.2;
+Static constant is usually public, and static variable is usually private.
+
+name = Character.toUpperCase(name.charAt(0)) + name.substring(1);
+Wrapper class and toUpperCase method of Character wrapper class.
+
+private static void idNow();
+Static methods cannot refer to any of the non static methods or variables. They can use only other static variables and static mathods. They can however invoke non static method if, in the body of this method, will happen initialization of a new object of this class. (using new constructor). Then you can invoke non static methods by calling an object just created.
+
+You can invoke a static method/or use a variable in your main function if your class is defined in the same file. Otherwise you have to specify class name.
+
+Using math methods like ceiling, floor etc, always round the results because the returned results are double and if you want to make them into integers, it is good to round em up and cast immediately into integers to avoid slight variations.
+
+Methods ivnoked with primitive variable parameters don't change the value of the parameters. Their value is copied into method body and changes made to them do not affect the original value of the variables. This is call by value. When you however use objects as parameters. All changes made to them inside method body, are also changed the original objects that you invoked the method with. This is call by reference.
+
+With objects. = operator assigns memory address to the variable name. So obj1 = obj2. Changing one changes another because = operator copies the memory address. obj1 name and obj2 both refer to the same memory address. if(obj1 == obj2) will return true because == operator on objects checks if they have the same memory address. Instead use obj1 = new Data(obj2). This way you use copy constructor to copy value of obj2 and copy it into obj1. This is deep copy, when all data is copied. Shallow copy is when you copy the memory address.
+
+Inside the method. Before assigning any value. Check if object is empty. If you assign obj1 = new Data(obj2) and if obj2 in fact is null. Then you will have an error. Instead check if obj2 == null. If so, you can assign obj1 = null, but never assign null from null object. Assign null from literal "null", not from a null object.
+
+StringTokenizer numberFactory = new StringTokenizer(inputLine, delimiters);
+Reads [inputline] which is a string, and delimiters is list of characters that break the string. Example ("Hello, this is a good day", ", /n". So all commas, spaces and new lines will divide this string into smaller strings. 
+if (numberFactory.countTokens() >= 2) {
+string1 = numberFactory.nextToken();
+string2 = numberFactory.nextToken();
+}
+int age = Integer.parseInt(string2);
+parseInt(string) - tries to take a number int from a string. For example "2213" will turn ino 2213. Integer is a wrapper class. There is also double parse double and similar.
+
+public Sub3a getBD() {
+return new Sub3a(born);}
+When you return an object. Use copy constructor if this object is mutable. Otherwise returning reference will cause a privacy leak and access to change the original object.
+
+Sub3 pet1 = new Sub3("Sisi", new Sub3a(3,2,2005), new Sub3a(1,1,2010));
+Legal. Anonymous object. You create only value of a class, you don't name new objects.
+
+import chapter4.Sub4a;
+Importing a class from chapter4 package. If your current package already has Sub4a class. The chapter4 class will take first order. Sub4a will refer to chapter4 from now on. If you need to use Sub4a from your current package, you package specifier, for example package5.Sub4a. Now you refer to this package class.
+
+import chapter4.*
+Here importing all classes from package4. If package4 has subpackages, they are not included. It imports only files, not folders.
+
+If you import few packages or two classes from two packages and the classes have the same name. It will cause an error. Way to fix it. Import only one package/class. And the other one use with package specifier.
+
+You can use javadoc for documenation. At the beginning of your class enter /** and end with */ Inside you can put details about your class. Date, version, author etc. And Same comments you can put before methods do explain what do they do and describe parameters.

@@ -1,0 +1,7 @@
+this is a first line
+this is a second one
+third one
+this is 4th, but next one is empty
+
+sixth now
+and seventh

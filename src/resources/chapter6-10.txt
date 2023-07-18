@@ -1,0 +1,387 @@
+										CHAPTER6
+
+double[] score = new double[10];
+Creating an array. Syntax type[] name = new type[numberOfIndexes]
+
+double[] score;
+score = new double[10];
+Another way of creating an array.
+
+score.lenght;
+This is a constant that is created when array is created. It returns size of the array.
+
+int[] tests = {2, 5, 12, 22, 11, 49};
+Creating indexes and their values of an array.
+
+char[] letters = {'H', 'e', 'l', 'l', 'o'};
+String word = new String(letters);
+Array of type char can sometimes behave like a string. For example string constructor can take array of char as a argument and return a string type like here. Now word string is equal to "Hello".
+
+System.out.println(letters);
+Println method also will automatically cast array of char into a string.
+
+String word2 = new String(letters, 0, 4);
+String has also another constructor with array of char. This one returns array of char, with 4 characters starting from index 0. First parameter is char array, second parameter is starting point and third parameter is number of characters.
+
+Arrays are like objects, so returning them or passing to a method, passes their memory address, their reference, not the value itself.
+
+Sub2a[] name = new Sub2a[10];
+You can also make an array of class types. Here you created indexed variables, not objects. It means that this array holds 10 variable names that could refer to objects however all of them return null, because they do not have memory addresses because no constructor had been invoked.
+
+enum Level { EASY, MEDIUM, HARD }
+Enums are like arrays and classes combined. They got methods like classes, and they got indexied variables but the values are fixed and can be chosen from the list only.
+
+Level level01 = Level.HARD;
+Level level03 = Level.EASY;
+Level level10 = Level.HARD;
+if(level01==level10)
+System.out.println("Same difficulty");
+
+this.numVisits[i] = new Sub3a(copee.numVisits[i])
+Line from a copy constructor of an object. One of the instance variables is an array of other objects. Here Sub3a is another object type and numVisits is the name. Assume this is not an array. Remove [i]. Now it looks like one instance of another object. Same rules apply to arrays. Pass by reference, that's why you need to use copy constructor.
+
+for(double element: array)
+For each loop or enchanced for loop. Syntax: for(typeofarray arrayelement: nameofarray). This for loop iterates each variable of an array and passes the reference into arrayelement variable. With each iteration this variable changes value to another variable of an array. Easier to use than standard fro loop. Useful when you don't need number of iterations.
+
+public static void sumNum(int... arg)
+if(arg.length == 0)
+for(int ele: arg) {}
+
+(int... arg) Means that the number of int arguments will vary. All argument passed by int... are passed by value into an array. This method created an array name arg and elemenets are all the parameters. In body of this method we check if any arguments have been passed. int... name - means that even zero number of parameters could be passed. If we need our method to pass at least one value, we need to define method (int num1, int... arg). This way at least one agrument must be passed. Name of this is vararg specification (vararg for various arguments - various number of arguments). The rule is, only one vararg per method definition and the vararg must be the last in order. There cannot be two varargs in one method, even if they have 2 different types, String and int, only one vararg per method.
+
+private int [][] grades;
+Multidimensional array. Two dimensional in this case. We create an array 3 by 5 (3 rows, 5 columns, unlike x and y axis, here is swapped. This array looks like this
+xxxxx
+xxxxx
+xxxxx
+
+public void copyArray(int [][] original) {
+		int grades = new int[original.length][original[0].length];
+		for(int i = 0; i<original.length; i++)
+			for(int ii = 0; ii<original[0].length; ii++)
+				grades[i][ii] = original[i][ii];
+	}
+This method copies an array. Array, whether one-dminesional or multi-dimensional. it can be a parameter to the method, same as it can be a return tyoe. arrayname.lenght returns the lenght of an array, it is, number of rows. arrayname[0].lenght returns a lenght of an array as columns number. 2-dimensional array is like an array of arrays. original[0] is an array that has another array in it. Wether it is [0] or any other indexed number. The returned lenght will be the same cuz all indexed variables has an array of the same size.
+
+int [][] raggedArray = new int [3][];
+		raggedArray[0] = new int[2];
+		raggedArray[1] = new int[5];
+		raggedArray[2] = new int[4];
+This is an example of a ragged array. It looks like this:
+		 xx
+		 xxxxx
+		 xxxx
+It is an irregular array; raggedArray has length of 3, three instances of inside array. Array 0 has an array size 2, array 1 has an array of size 5, and array 2 has an array of size 4.
+
+										CHAPTER7
+
+public class Sub1a extends Sub1 {
+Keyword extends means that Sub1a is a child of Sub1 who is a parent. It inherits variables and methods.
+
+final keyword
+Final keyword in method means that it cannot be overridden in child class.
+Final keyword in class 	means that it cannot have derived classes. It cannot have children :C
+
+super();
+Invokes empty constructor is superclass. If you do not include this line or any line with super constructor. Compiler will automatically run empty constructor.
+
+super(name, age);
+Paremeters are passed to base constructor. The rule is that the super constructor must be in the first line of child class constructor and only one per constructor child.
+
+super.showInfo();
+You can access base class variables and methods from within of child class. Simply use super. as a base class name. Remember that you need proper access to those variables/methods.
+
+this(name, age);
+Instead of using super constructor you may wanna need to use constructor inside child class. You can use this keyword if you want to invoke another constructor in the same class that you are in.
+
+public - can be accessed by name anywhere
+private - can be accessed by name only in this class
+protected - can be accessed by name in this class, child classes, same package classes
+default access (package access) - can be accessed by name only in this package
+
+You should always override toString and equals() methods. Those two methods are inherited from class Object which is an ancestor class of all classes that you create. All classes that you create are children of this class and all your classes inherit those two methods.
+
+public boolean equals(Object otherObject) {
+You should always override equals() method that takes Object type parameter. And then check if it is null.
+
+if (getClass() != otherObject.getClass())
+getClass() method is inherited from Object class. It returns name of a class type of an object and == and != operators are used to compare.
+
+Sub3 other = (Sub3)otherObject;
+Before comparing variables of 2 objects, you need to cast parameter from Object type into your own type. You cannot access otherObject.name because as a parent you don't have those variables, your children have it and you have to be casted into your child if you are. If you are Sub3a, and if a method takes Object type parameter, remember that as a child, you also have parents variables so you kinda are a parent. You just need to be casted down to child again to access your variables.
+
+if (!(otherObject instanceof Sub3a))
+obj1 instanceof obj2 returns true if obj1 is a child of same type as obj2. It doesn't check if two objects are of the same type. It checks if obj1 is not a parent to obj2.
+
+										CHAPTER8
+
+public Sub1 clone() {
+return new Sub1(this);}
+Overridden clone() method using copy constructor. It returns Sub1 type so you can assign the result of this method to a new variable name.
+
+public final void meth2() {}
+You can mark a method final. This way compiler will use early binding and always will invoke this method. Because it is final it cannot be overridden.
+
+System.out.println(getClass());
+getClass(); is a method that retuns the name of the class type of the calling object. For example obj1.getClass() will return class name of obj1.
+
+b[i] = new Sub1(a[i]);
+b[i] = a[i].clone();
+Two ways of copying an array. With copy constructor the return type will always be Sub1, but with clone() and thanks to polymorphism the correct clone() method definition will be invoked depending of the type of the object.
+
+obj.info();
+Polymorphism/late binding. The compiler will invoke info() method of the object type of obj. If the method is overridden it will invoke the overridden method as long as it is non static.
+
+Sub1 obj4 = new Sub1a();
+You can create an object of derived class and asign to variable name of a parent class.
+When invoking non static method it will try to find overridden method in Sub1a.
+
+Non static methods can be overridden due to late binding - they will be run from object type definition. Static methods cannot be overridden and will always be invoked from the variable type definition - and that's why you can replace variable name with class name instead. If static method invocation is inside the non static method, it will run static method definition in the same place where it was invoked. If invocation of non static method is in Sub1a, then its static method definition will be invoked (if present, if not, checks parent).
+
+public static void upcasting(Sub1 otherObject) {
+Sub1 thisObject = (Sub1)otherObject;}
+Upcasting. It is easy. If the parameter is Sub1, you can put Sub1 object type or any of the derivered classes. No problems here. You can use it if a method can take action on any derived classes of super class. For example all animals, not separate for each type of animal.
+
+public static void downcasting(Object otherObject) {
+if (otherObject instanceof Sub1a)
+		{
+		Sub1a thisObject = (Sub1a)otherObject;}}
+Downcasting. It is good practice to check if that class is instance of some other class to check if it is even possible to cast down to that type. It is useful if you want take as parameter general object type, and need to downcast to access their methods and variables. other.object.showInfo() wouldn't work before casting because it is now an Object type, and we defined showInfo() in Sub1a type so we need to downcast to Sub1a to have access to those methods and variables.
+
+public abstract class Sub2 {}
+Abstract class. You cannot create an object of abstract class but you can create an object of the derived class that is not abstract and use abstract class variable name. For example: Sub2 obj = new Sub2a() is legal. Any class that has abstract methods is an abstract class, however not every abstract class must have abstract methods. You can create an abstract class and have only concrete methods.
+
+protected abstract int calculateResidency();
+You need to declare an abstract class before you want to use it. You can then invoke abstract class inside definition of concrete method definition in your abstract class. It makes sense because if abstract method is not defined in abstract class, you cannot use it with that object type, and that's why you cannot create an object type of an abstract class because you need the right object to call the method with.
+
+Your derived class doesn't need to define abstract method, but it will result in an error unless that class has its own derived classes which they define that abstract method.
+
+										CHAPTER9
+										
+public WrongFormatException extends Exception{//code}
+All exceptions are derived from Exctepion class
+
+Exception classes usually should have 2 constructors. One empty that calls super("error message"); and one with contructor with the actual error message that is also passed by super.
+All Exception classes inherit object.getMessage() method that returns that error message passed to super constructor.
+Exceptions may also have other instance variables too if needed.
+
+try{
+//code that may throw an exception, usually it is a method
+}catch(exception_type parameter_name){
+//code to be exetued when thrown exception matches caught exception type
+}finally{
+//code to be executed anyway whether exception is thrown or not}
+# In try block there is usually a code that may throw an exception. You throw an exception by throw new Exception("something wrong"). As you may guess. This is a constructor with String type as argument. You can also create new object first and then throw by name instead of using anonymous contructor. However it is not needed at all. Inside try block there is usually a method that throws an exception.
+# When you throw an exception of some type, you need to catch that exception, and the type need to match. When exception is thrown, the try block (usually a method) is terminated and catch code is executed with created object snipped to parameter name.
+# Finally happens always. If exception is thrown, then catch is run, then finally. If no exception is thrown, catch is obviously omitted, but finally still runs.
+
+You can have more than one catch block to catch multiple exceptions.
+You can nest exceptions, this is, try-catch block can be inside another try or inside another catch block.
+If in this case an exception is thrown, the method where it was thrown is terminated and outer catch is executed if exception type matches.
+
+public void divideBy(int number) throws Exception { //code}
+If your method throws an exception, but doesn't catch it. The definition of that method must include throws clause in the title.
+
+If derived class inherits a method that throws. It cannot add more exception that it throws, but it can remove them, or change the exception type thrown to any of the derived classes.
+
+										CHAPTER10
+										
+import java.util.Scanner;
+Scanner is used for reading from keyboard, strings, or even files.
+
+import java.io.PrintWriter;
+PrintWriter is used to save text to a file. Print writer uses same methods as System.out. This is, print() and println(). With String literals, ints or mixed.
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+Are both classes used to connect a text file to a an object.
+
+import java.nio.charset.StandardCharsets;
+If your file contains non english characters or letters. It is good to import this class too.
+
+inputStream = new Scanner(new FileInputStream("chapter10Sub2.txt"), StandardCharsets.UTF_8);
+outputStream = new PrintWriter(new FileOutputStream("chapter10Sub2a.txt"), false, StandardCharsets.UTF_8);
+Example on how to connect input and output files to the streams.
+
+Scanner inputStream = null;
+PrintWriter outputStream = null;
+Connecting files to streams must be wrapped around try and catch blocks. That's why it is important to create the variables of type Scanner and PrintWriter outside of them. So they are visible outside the try catch blocks.
+
+}catch(FileNotFoundException e) {
+Connecting to streams may throw an exception of type FileNotFoundException. This means that the file could not be found when opening a file. And also, that the file could not be saved for some reason.
+
+line1 = inputStream.nextLine();
+Using scanner object to read from input file.
+
+outputStream.print(line2 + "\n");
+Using PrintWrite methods to save to connected output stream.
+
+System.out.println(inputStream.hasNextLine());
+Returns true if the file has more text to it. Returns false if this is the end of the file.
+It is used before inputStream.nextLine() because if there is no next line. It will throw an exception.
+
+while(inputStream.hasNextLine()) {
+//			<some code>
+//		}
+Safe way to read lines from file. This way no exception will be thrown due to reading from file while it has ended.
+
+inputStream.close();
+outputStream.close();
+Always close streams.
+
+Scanner justInput = new Scanner(sentence);
+Where sentence is a String. Or it could be a longer string with several lines. Thanks to scanner method, you could make actions to that string. justInput.nextLine() etc.
+
+justInput.useDelimiter(";");
+Now this object of Scanner when using methods nextInt or next, it will be ignoring ";" and treating it as spaces between next words.
+
+justInput = new Scanner("Just-another-example-text").useDelimiter("-");
+You can invoke method at the same time when creating new object with constructor.
+
+justInput.reset();
+Will reset delimiters to default value.
+
+import java.io.BufferedReader;
+Old way of reading from text file. It is an old method but still widely used because it tends to be faster sometimes.
+
+import java.io.FileReader;
+This class is used to connect the stream to the file input instead of FileInputStream.
+
+BufferedReader inputStream = new BufferedReader(new FileReader("chapter10Sub2.txt"));
+Example. Also this also must be wrapped in try and catch blocks.
+
+String line = inputStream.readLine();
+			while(line!= null) {
+				System.out.println(line);
+				line = inputStream.readLine();
+			}
+BufferedReader doesn't have a method to check whether there are more lines to be read. Good way is to use this algorithm.
+
+It also doesn't have nextInt and nextDouble etc. It has next and nextLine. That's why it is faster. It simply reads without checking what it reads. If you need speed, use this. If you want to read different data types, use Scanner. If you still want to use BufferedReader. You can use StringTokenizer with it.
+
+System.err.println("This is a red error message");
+Use err. to print red text to the console.
+
+import java.io.PrintStream;
+import java.io.FileDescriptor;
+If you wish to save lines to a file instead of printing them to the console, you need those two classes.
+
+PrintStream errStream = null;
+		try {
+errStream = new PrintStream(new FileOutputStream("chapter10Sub2c.txt"));
+First you connect the text file to a stream of type PrintSteam.
+
+System.setErr(errStream);
+Then you use method setErr with parameter of the PrintStream object. Now all System.err messages from console, will be saved to the Stream that this object is connected to. In this case, to a text file.
+
+System.setOut(errStream);
+This is setting standard System.out to text file too. Not only error messages but also normal messages will be saved to a file.
+
+errStream = new PrintStream(new FileOutputStream(FileDescriptor.err));
+System.setErr(errStream);
+If you wish to set it back to normal. You need to connect an object into an Error concole stream.
+
+import java.io.File;
+File is a class that can create files, delete files, create and delete directories (folders), check if file exists etc.
+
+File fileObject = new File(fileName);
+Creating an object of type File with fileName. Note, this is not equal to creating a file itself.
+
+if(fileObject.exists())
+This method checks if the file exists with the name we given in the constructor.
+
+fileObject.delete()
+Method returns true if it successfully deletes a file with the fileName.
+
+outputStream = new PrintWriter(new FileOutputStream(fileObject));
+We can use File class to create text files for example. Instead of fileObject here, we could have used String literal. There are two options. Class File or string literal. Class File give us useful features like deleting files, checking if exists, creating derectiories (folders) and deleting them. If you just want to create a file, you String literal.
+
+import java.io.ObjectOutputStream; //to save to binary file
+import java.io.ObjectInputStream; //to read a binary file
+You need these two classes to save and open binary files in java.
+
+ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("chapter10Sub4.dat"));
+Similar to text files. Here best file extension is .dat
+
+outputStream.writeInt(n1);
+outputStream.writeInt(n2);
+outputStream.writeDouble(d1);
+outputStream.writeDouble(d2);
+outputStream.writeUTF(s1);
+outputStream.writeUTF(s2);
+Few examples of method writing to a binary file. writeUTF is for strings.
+
+n1 = inputStream.readInt();
+n2 = inputStream.readInt();
+d1 = inputStream.readDouble();
+d2 = inputStream.readDouble();
+s1 = inputStream.readUTF();
+s2 = inputStream.readUTF();
+Few examples of method reading from a binary file. readUTF is for strings.
+
+int[] nArray = {n1,n2,n3,n4,n5};
+for (int i : nArray) {
+	outputStream.writeInt(i);
+	}
+It is a good way to save same type of data in same binary file. Data types, especially object should not be mixed with primitive data types.
+
+while(true) {
+	intArray[i] = inputStream.readInt();
+	System.out.println(intArray[i]);
+	i++;
+	}	}catch(EOFException e) {
+	System.out.println("End of file. Nothing more to read.");
+	}
+There is no other way to detect end of binary file. Scanner has a method hasNext() and hasNextLine() to detect if there is more data to read. Binary files have no option for that, and when they reach end of a file. An exception is thrown. It is a good chance to inform a user that end of file is reached.
+
+import java.io.Serializable;
+public class Sub4b implements Serializable {
+You can also write objects into a binary file. Remember that the class of the objects you want to write, needs to implement Serializable. Nothing else you need to do, just add those two keywords to a Class definition. And import a Serializable class. Also if this class's variables are not primitive types, but, objects of other classes. Those classes also must be Serializable.
+
+Sub4b object1 = new Sub4b("Sisi", 9);
+Sub4b object2 = new Sub4b("Kaia", 6);
+outputSteam.writeObject(object1);
+outputSteam.writeObject(object2);
+Saving objects into a binary file with writeObject(object) method.
+
+Sub4c objFromFile1 = (Sub4c)inputStream.readObject();
+Sub4c objFromFile2 = (Sub4c)inputStream.readObject();
+Reading objects from a binary file. This method returns an Object type. Remember that you need to downcast from Object into your desired data type.
+
+Sub4b[] simpleList = new Sub4b[2];
+simpleList[0] = new Sub4b("Rambo", 6);
+simpleList[1] = new Sub4b("Dolar", 15);
+outputStream.writeObject(simpleList);
+Arrays are just like objects, and you can also write them into a binary file.
+
+emptyList = (Sub4b[])inputStream.readObject();
+And read them too. Also with downcasting from object into Sub4b[] in this case.
+
+import java.io.RandomAccessFile; // new class
+To read random data very quickly and efficiently.
+
+RandomAccessFile ioStream = new RandomAccessFile("chapter10Sub5.java", "rw");
+"rw" means read and write (you can read from a file and write to a file)
+"r" means read only (you can only read from a file but you cannot write anything)
+
+When opening a file this, if the file doesn't exist, it will create the file. If the file exists. It will not clear the file. You will be editing the file, and the pointer will be set at 0. You will be appending to a file, but all the changes will be at the beginning of a file, not the end.
+
+ioStream.setLength(0);
+If you want to start from an empty file. Use this method. It will make the file lenght to 0, which will result in losing all the data. You can set lenght to any value. for example 10. All data beyond 9th (10th and further) will be lost.
+
+ioStream.length()
+It returns lenghtin bytes of a file.
+
+ioStream.seek(3);
+Moves a pointer at 3. 0 means it will start from beginning. instead of 0, you can enter lenght() and it will be appending at the end of the file.
+
+ioStream.writeByte(1);
+ioStream.writeByte(2);
+Writing variables of type Byte into a file.
+
+ioStream.writeInt(1);
+ioStream.writeDouble(2.25);
+Writing variables of type int and double into a file.
+
+byte a = ioStream.readByte();
+Reads next Byte from a file. There are other methods like readDouble, readInt, readUTF etc.
