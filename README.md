@@ -1,2 +1,2 @@
-# AbsoluteJava6th
-Quick tutorial for Java basics and syntax. Also a cheat sheet for basics. Based on a book Absolute Java 6th edition.
+# Absolute Java 6th edition by Walter Savit
+This repository is a first step in learning Java. It is a quick guide on learning Java basics. Each chapter of the book is represented by one package in this project.
